@@ -1,6 +1,6 @@
 :root {
   --primary-color: #4f016e;
-  --secondary-color: #c5c8c9;
+  --secondary-color: #e2e0e2;
   --third-color: #4022c7;
   --forth-color: #100930;
   --fifth-color: #a8c4c7;
@@ -44,7 +44,17 @@ img.account {
   width: 40px;
 }
 
-header,
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--secondary-color);
+  z-index: 1;
+  background-color: white;
+  height: 60px;
+}
 .contact {
   display: flex;
   align-items: center;
@@ -74,15 +84,25 @@ h4 {
   width: 30px;
   margin-right: 15px;
 }
+a {
+  text-decoration: none;
+}
 .mySlides {
   display: none;
-  height: 500px;
+  height: 450px;
+  width: 800px;
 }
-.info {
-  margin-left: 15px;
-  position: absolute;
-  left: 20%;
+.info,
+.description,
+.details,
+hr,
+.related {
+  position: relative;
+  display: grid;
+  margin: 15px 20%;
+  /* margin-right: 20%; */
 }
+
 .msg {
   border-radius: 5px;
   width: 250px;
@@ -90,4 +110,49 @@ h4 {
   background-color: var(--primary-color);
   color: white;
   font-size: 19px;
+}
+table {
+  border-collapse: collapse;
+  background-color: var(--secondary-color);
+}
+.second {
+  border-right: 1px dashed rgb(184, 180, 180);
+}
+td {
+  padding: 8px;
+  height: 30px;
+}
+th {
+  height: 50px;
+}
+p {
+  line-height: 30px;
+}
+#googleMap {
+  height: 300px;
+  width: 850px;
+  display: flex;
+  align-items: inherit;
+  margin-left: 20%;
+}
+
+td img {
+  width: 270px;
+  height: 200px;
+}
+table.related {
+  background-color: white;
+}
+footer {
+  background-color: var(--secondary-color);
+  height: 80px;
+}
+ul {
+  list-style: none;
+  display: inline-flex;
+  margin-left: 25%;
+  align-items: center;
+}
+li {
+  padding: 10px;
 }
