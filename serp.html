@@ -1,6 +1,282 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Craiglist</title>
+    </head>
     <body>
-        
+        <header>
+            <img src="https://www.anythinklibraries.org/sites/default/files/styles/full/public/craigslist_0.png?itok=6B6oh9aC" class="craigslist" alt="craigslist log">
+            <ul class="breadcrumb">
+                <li><a href="serp.html">Serp</a></li>
+                <li><a href="product.html">Product Page</a></li>
+            </ul>
+            <div class="profile">
+                <label for="favorite">Favorite Listings</label>
+                <img src="starPurple.png" class="favorite" onclick="favorite" alt="favorite Items" place>
+                <label for="account">My Account</label>
+                <img src="https://www.fedex.com/content/dam/fedex/us-united-states/shipping/images/2020/Q2/account_purple_icon_1988286190.png" class="account" onclick="#" alt="My Account">            
+            </div>
+        </header>
+        <section>
+            <div class="wrap">
+                <div class="search">
+                   <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                   <button type="submit" class="searchButton">
+                     <i class="fa fa-search"></i>
+                  </button>
+                </div>
+             </div>
+            <div class="filters">
+                <div class="filter-container">
+                    <div class="filter-title">Housing Type</div>
+                    <div class="option-wrapper">
+                        <div class="option selected">Condo</div>
+                        <div class="option">House</div>
+                        <div class="option">Townhouse</div>
+                        <div class="option">Room</div>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-title">Bedrooms</div>
+                    <div class="option-wrapper">
+                        <div class="option selected">Any</div>
+                        <div class="option">Studio</div>
+                        <div class="option">1</div>
+                        <div class="option">2</div>
+                        <div class="option">3</div>
+                        <div class="option">4+</div>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-title">Price</div>
+                    <div slider id="slider-distance">
+                        <div>
+                          <div inverse-left style="width:70%;"></div>
+                          <div inverse-right style="width:70%;"></div>
+                          <div range style="left:30%;right:40%;"></div>
+                          <span thumb style="left:30%;"></span>
+                          <span thumb style="left:60%;"></span>
+                          <div sign style="left:30%;">
+                            <span id="value">30</span>
+                          </div>
+                          <div sign style="left:60%;">
+                            <span id="value">60</span>
+                          </div>
+                        </div>
+                        <input type="range" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+                        this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                        var children = this.parentNode.childNodes[1].childNodes;
+                        children[1].style.width=value+'%';
+                        children[5].style.left=value+'%';
+                        children[7].style.left=value+'%';children[11].style.left=value+'%';
+                        children[11].childNodes[1].innerHTML=this.value;" />
+                      
+                        <input type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+                        this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                        var children = this.parentNode.childNodes[1].childNodes;
+                        children[3].style.width=(100-value)+'%';
+                        children[5].style.right=(100-value)+'%';
+                        children[9].style.left=value+'%';children[13].style.left=value+'%';
+                        children[13].childNodes[1].innerHTML=this.value;" />
+                      </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-title">Furniture</div>
+                    <div class="option-wrapper">
+                        <div class="option selected">Any</div>
+                        <div class="option">Unfurnished</div>
+                        <div class="option">Furnished</div>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-title">Pet Policy</div>
+                    <div class="select-wrapper">
+                        <select name="" id="">
+                            <option value="any">Any</option>
+                            <option value="allowed">Allowed</option>
+                            <option value="not-allowed">Not Allowed</option>
+                            <option value="dogs-allowed">Dogs Allowed</option>
+                            <option value="cats-allowed">Cats Allowed</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-title">Availability</div>
+                    <div class="select-wrapper">
+                        <select name="" id="">
+                            <option value="any">Any</option>
+                            <option value="available-now">Available Now</option>
+                            <option value="available-next-month">Available Next Month</option>
+                            <option value="available-on">Available on</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-title">Bathrooms</div>
+                    <div class="option-wrapper">
+                        <div class="option selected">Any</div>
+                        <div class="option">1</div>
+                        <div class="option">2</div>
+                        <div class="option">3</div>
+                        <div class="option">4+</div>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-title">Sort By</div>
+                    <div class="select-wrapper">
+                        <select name="" id="">
+                            <option value="newest-first">Date - Newest First</option>
+                            <option value="oldest-first">Date - Oldest First</option>
+                            <option value="price-highest">Price - $$$ to $</option>
+                            <option value="price-lowest">Price - $ to $$$</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="filter-container">
+                    <div class="filter-title">Amenities</div>
+                </div> -->
+            </div>
+            <div class="filters-button">
+                <button>Show Results</button>
+                <button class="link">Reset filters</button>
+            </div>
+        </section>
+        <section class="section-list">
+            <div class="header-button">
+                <button class="button-small">📍 Map View</button>
+            </div>
+            <div class="list-items">
+                <div class="item-container">
+                    <img class="item" src="/img/item1.jpeg" alt="Image">
+                    <div class="item-info">
+                        <div class="item-title">
+                            <p>
+
+                                <span>$2,000</span><span> / Month </span><span>| 1 Bed </span><span>| 1 Bath</span>
+                            </p>
+                        </div>
+                        <div class="item-description">
+                            <address>1420 Georgia Street</address>
+                            <p>Entire Apartment - Vancouver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-container">
+                    <img class="item" src="/img/item2.jpeg" alt="Image">
+                    <div class="item-info">
+                        <div class="item-title">
+                            <p>
+
+                                <span>$2,000</span><span> / Month </span><span>| 1 Bed </span><span>| 1 Bath</span>
+                            </p>
+                        </div>
+                        <div class="item-description">
+                            <address>1420 Georgia Street</address>
+                            <p>Entire Apartment - Vancouver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-container">
+                    <img class="item" src="/img/item3.jpeg" alt="Image">
+                    <div class="item-info">
+                        <div class="item-title">
+                            <p>
+
+                                <span>$2,000</span><span> / Month </span><span>| 1 Bed </span><span>| 1 Bath</span>
+                            </p>
+                        </div>
+                        <div class="item-description">
+                            <address>1420 Georgia Street</address>
+                            <p>Entire Apartment - Vancouver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-container">
+                    <img class="item" src="/img/item4.jpeg" alt="Image">
+                    <div class="item-info">
+                        <div class="item-title">
+                            <p>
+
+                                <span>$2,000</span><span> / Month </span><span>| 1 Bed </span><span>| 1 Bath</span>
+                            </p>
+                        </div>
+                        <div class="item-description">
+                            <address>1420 Georgia Street</address>
+                            <p>Entire Apartment - Vancouver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-container">
+                    <img class="item" src="/img/item5.jpeg" alt="Image">
+                    <div class="item-info">
+                        <div class="item-title">
+                            <p>
+
+                                <span>$2,000</span><span> / Month </span><span>| 1 Bed </span><span>| 1 Bath</span>
+                            </p>
+                        </div>
+                        <div class="item-description">
+                            <address>1420 Georgia Street</address>
+                            <p>Entire Apartment - Vancouver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-container">
+                    <img class="item" src="/img/item6.jpeg" alt="Image">
+                    <div class="item-info">
+                        <div class="item-title">
+                            <p>
+
+                                <span>$2,000</span><span> / Month </span><span>| 1 Bed </span><span>| 1 Bath</span>
+                            </p>
+                        </div>
+                        <div class="item-description">
+                            <address>1420 Georgia Street</address>
+                            <p>Entire Apartment - Vancouver</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <ul class="clfooter">
+                <li>© 2021 <span class="desktop">craigslist</span><span class="mobile">CL</span></li>
+                <li><a href="https://www.craigslist.org/about/help/">help</a></li>
+                <li><a href="https://www.craigslist.org/about/scams">safety</a></li>
+                <li class="desktop"><a href="https://www.craigslist.org/about/privacy.policy">privacy</a></li>
+                <li class="desktop"><a href="https://forums.craigslist.org/?forumID=8">feedback</a></li>
+                <li><a href="https://www.craigslist.org/about/terms.of.use">terms</a></li>
+                <li><a href="https://www.craigslist.org/about/">about</a></li>
+            </ul>        
+        </footer>
+        <script src="js/select.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <script>
+            function range() {
+                return {
+                    minprice: 1000, 
+                    maxprice: 7000,
+                    min: 100, 
+                    max: 10000,
+                    minthumb: 0,
+                    maxthumb: 0, 
+                    
+                    mintrigger() {   
+                        this.minprice = Math.min(this.minprice, this.maxprice - 500);      
+                        this.minthumb = ((this.minprice - this.min) / (this.max - this.min)) * 100;
+                    },
+                    
+                    maxtrigger() {
+                        this.maxprice = Math.max(this.maxprice, this.minprice + 500); 
+                        this.maxthumb = 100 - (((this.maxprice - this.min) / (this.max - this.min)) * 100);    
+                    }, 
+                }
+            }
+        </script>
     </body>
 </html>
