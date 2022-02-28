@@ -55,6 +55,10 @@ header {
   background-color: white;
   height: 60px;
 }
+.slider {
+  width: 700px;
+  margin-left: 20rem;
+}
 .contact {
   display: flex;
   align-items: center;
@@ -68,11 +72,7 @@ header {
 h4 {
   margin-left: 20px;
 }
-.slideshow {
-  display: flex;
-  align-items: inherit;
-  margin-left: 20%;
-}
+
 .craigslist {
   width: 130px;
   display: flex;
@@ -87,11 +87,7 @@ h4 {
 a {
   text-decoration: none;
 }
-.mySlides {
-  display: none;
-  height: 450px;
-  width: 800px;
-}
+
 .info,
 .description,
 .details,

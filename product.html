@@ -2,23 +2,15 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="script.js"></script>
         <title>Product Page</title>
     </head>
     
     <body>
-        <!-- <section class="header">
-            <ul class="breadcrumb">
-                <li><a href="#">Serp</a></li>
-                <li><a href="#">Product Page</a></li>
-              </ul>
-            <div class="profile">
-                <img src="https://lh3.googleusercontent.com/proxy/wjn2H97OdXiZWsSUJWE9M8juMa_wfEZGIzcM8yxerHF5ex2PLxa1tLklzQwykTBz01WYg-vmk86oG-gvR4pxi_47seL-I4FZSSSV-EBkbyiZTPCNu6gG4BY" onclick="favorite" alt="favorite Items">
-                <img src="https://www.fedex.com/content/dam/fedex/us-united-states/shipping/images/2020/Q2/account_purple_icon_1988286190.png" onclick="#" alt="My Account">
-            </div>
-        </section> -->
         <header>
-            <img src="https://www.anythinklibraries.org/sites/default/files/styles/full/public/craigslist_0.png?itok=6B6oh9aC" class="craigslist" alt="craigslist log">
+            <img src="https://www.anythinklibraries.org/sites/default/files/styles/full/public/craigslist_0.png?itok=6B6oh9aC" class="craigslist" alt="craigslist logo">
             <ul class="breadcrumb">
                 <li><a href="serp.html">Serp</a></li>
                 <li><a href="product.html">Product Page</a></li>
@@ -30,18 +22,27 @@
                 <img src="https://www.fedex.com/content/dam/fedex/us-united-states/shipping/images/2020/Q2/account_purple_icon_1988286190.png" class="account" onclick="#" alt="My Account">            
             </div>
         </header>
-        <div class="slideshow">
-            <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-            <div>
-                <img class="mySlides" src="https://images.craigslist.org/00t0t_h6BVDNTxg9az_0CI0pO_600x450.jpg">
-                <img class="mySlides" src="https://images.craigslist.org/00n0n_47qA7ArjYfwz_0CI0pO_600x450.jpg">
-                <img class="mySlides" src="https://images.craigslist.org/00i0i_9ahcPjEaFHxz_0CI0pO_600x450.jpg">
-                <img class="mySlides" src="https://images.craigslist.org/00J0J_u97M1MRvXJz_0CI0pO_600x450.jpg">
-                <img class="mySlides" src="https://images.craigslist.org/00707_pGw04aTqMGz_0CI0pO_600x450.jpg">
-                <img class="mySlides" src="https://images.craigslist.org/00T0T_g9uFk6b3UZEz_0CI0pO_600x450.jpg">
-            </div>
-            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        <div class=" slider ">
+            <div id="carouselExampleControls" class="carousel slide slides" data-bs-touch="false" data-bs-interval="false"">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://media.istockphoto.com/photos/home-with-blue-siding-and-stone-faade-on-base-of-home-picture-id1272128530?b=1&k=20&m=1272128530&s=170667a&w=0&h=k9lT5-DEmkmehDb-EKRHoP1-op2DTgz4ibiWGXmj7h8=" class="block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://media.freshdaily.ca/static/articles/20201022-stingrayhouse.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70" class="block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </div>
+            
         <div class="info">
             <h1>WINDSOR GATE LUXURY 3 BED CONDO - 1300ft2 </h1>
             <h3> $3,500 / month </h3>
